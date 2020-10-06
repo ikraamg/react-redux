@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/ikraamg/react-redux.git/static/css/main.61a42a9d.chunk.css",
+    "main.js": "/ikraamg/react-redux.git/static/js/main.ae38c9b7.chunk.js",
+    "main.js.map": "/ikraamg/react-redux.git/static/js/main.ae38c9b7.chunk.js.map",
+    "runtime-main.js": "/ikraamg/react-redux.git/static/js/runtime-main.134381db.js",
+    "runtime-main.js.map": "/ikraamg/react-redux.git/static/js/runtime-main.134381db.js.map",
+    "static/js/2.2548094d.chunk.js": "/ikraamg/react-redux.git/static/js/2.2548094d.chunk.js",
+    "static/js/2.2548094d.chunk.js.map": "/ikraamg/react-redux.git/static/js/2.2548094d.chunk.js.map",
+    "index.html": "/ikraamg/react-redux.git/index.html",
+    "precache-manifest.e68b0f68eff95847a70c3aebbfbfd05a.js": "/ikraamg/react-redux.git/precache-manifest.e68b0f68eff95847a70c3aebbfbfd05a.js",
+    "service-worker.js": "/ikraamg/react-redux.git/service-worker.js",
+    "static/css/main.61a42a9d.chunk.css.map": "/ikraamg/react-redux.git/static/css/main.61a42a9d.chunk.css.map",
+    "static/js/2.2548094d.chunk.js.LICENSE.txt": "/ikraamg/react-redux.git/static/js/2.2548094d.chunk.js.LICENSE.txt",
+    "static/media/logo.svg": "/ikraamg/react-redux.git/static/media/logo.5d5d9eef.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.134381db.js",
+    "static/js/2.2548094d.chunk.js",
+    "static/css/main.61a42a9d.chunk.css",
+    "static/js/main.ae38c9b7.chunk.js"
+  ]
+}
