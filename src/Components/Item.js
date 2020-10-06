@@ -10,4 +10,10 @@ function Item({ title, year }) {
   );
 }
 
+Item.propTypes = {
+  title: PropTypes.string.isRequired,
+  year: PropTypes.number.isRequired,
+
+};
+
 export default Item;

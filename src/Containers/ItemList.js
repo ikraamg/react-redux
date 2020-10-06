@@ -1,6 +1,5 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
-import PropTypes from 'prop-types';
+import { useSelector, useDispatch } from 'react-redux';
 import {
   Switch,
   Route,
@@ -9,14 +8,17 @@ import {
 import Item from '../Components/Item';
 import SearchBar from '../Components/SearchBar';
 import ItemDetails from '../Components/ItemDetails';
+import changeFilter from '../actions/actions';
 
 const ItemList = () => {
   const items = useSelector(state => state.items);
   const category = useSelector(state => state.category);
-  console.log(category);
+  const dispatch = useDispatch();
+  const handleFilter = value => dispatch(changeFilter(value));
 
-  const filteredBooks = category === 'All' ? items : items.filter(item => item.title === category);
-  const itemList = filteredBooks.map(item => (
+  const filteredItems = category === 'All' ? items : items.filter(item => item.title === category);
+
+  const itemList = filteredItems.map(item => (
     <Item
       title={item.title}
       year={item.year}
@@ -33,7 +35,7 @@ const ItemList = () => {
         </Route>
         <Route path={match.path}>
           <div>
-            <SearchBar />
+            <SearchBar items={items} changeFilter={handleFilter} />
             {itemList}
           </div>
         </Route>

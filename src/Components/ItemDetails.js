@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import {
   useParams,
 } from 'react-router-dom';
@@ -15,9 +14,5 @@ function ItemDetails() {
     </div>
   );
 }
-
-ItemDetails.propTypes = {
-
-};
 
 export default ItemDetails;
