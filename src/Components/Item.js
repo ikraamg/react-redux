@@ -1,15 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import BottomNav from './BottomNav';
 
-function Item(props) {
+function Item({ title, year }) {
   return (
-    <BottomNav />
+    <a type="button" href={`/itemList/${title}`}>
+      <div>{title}</div>
+      <div>{year}</div>
+    </a>
   );
 }
-
-Item.propTypes = {
-
-};
 
 export default Item;
