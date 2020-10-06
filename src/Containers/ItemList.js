@@ -1,5 +1,5 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import {
   Switch,
@@ -8,22 +8,14 @@ import {
 } from 'react-router-dom';
 import Item from '../Components/Item';
 import SearchBar from '../Components/SearchBar';
-import changeFilter from '../actions/actions';
 import ItemDetails from '../Components/ItemDetails';
 
-function ItemList({ items, category }) {
-  const handleCategory = e => {
-    // newCategory(e.target.value);
-    console.log(e.target.value);
-  };
-  // const handleRemoveBook = item => deleteBook(item);
-  // const handleItemClick = item => (
-  //   <Link to={`${match.url}/props-v-state`}>
-  //     Props v. State
-  //   </Link>
-  // );
+const ItemList = () => {
+  const items = useSelector(state => state.items);
+  const category = useSelector(state => state.category);
+  console.log(category);
 
-  const filteredBooks = category === 'All' ? items : items.filter(item => item.category === category);
+  const filteredBooks = category === 'All' ? items : items.filter(item => item.title === category);
   const itemList = filteredBooks.map(item => (
     <Item
       title={item.title}
@@ -33,7 +25,6 @@ function ItemList({ items, category }) {
   ));
 
   const match = useRouteMatch();
-
   return (
     <div>
       <Switch>
@@ -42,27 +33,13 @@ function ItemList({ items, category }) {
         </Route>
         <Route path={match.path}>
           <div>
-            <SearchBar handleCategory={handleCategory} />
+            <SearchBar />
             {itemList}
           </div>
         </Route>
       </Switch>
     </div>
   );
-}
-
-const mapStateToProps = state => ({
-  items: state.items,
-  category: state.category,
-});
-
-ItemList.propTypes = {
-  items: PropTypes.arrayOf(PropTypes.shape({
-    title: PropTypes.string,
-    category: PropTypes.string,
-    id: PropTypes.number,
-  })).isRequired,
-  category: PropTypes.string.isRequired,
 };
 
-export default connect(mapStateToProps)(ItemList);
+export default ItemList;
