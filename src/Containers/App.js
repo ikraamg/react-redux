@@ -4,32 +4,21 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link,
+  Redirect,
 } from 'react-router-dom';
 import ItemList from './ItemList';
 
 export default function App() {
   return (
     <Router>
-      <div>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/itemList">itemList</Link>
-          </li>
-        </ul>
-
-        <Switch>
-          <Route path="/itemList">
-            <ItemList />
-          </Route>
-          <Route path="/">
-            <div>Home</div>
-          </Route>
-        </Switch>
-      </div>
+      <Switch>
+        <Route path="/itemList">
+          <ItemList />
+        </Route>
+        <Route path="/">
+          <Redirect to="/itemList" />
+        </Route>
+      </Switch>
     </Router>
   );
 }
