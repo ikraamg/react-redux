@@ -7,18 +7,22 @@ import {
   Redirect,
 } from 'react-router-dom';
 import ItemList from './ItemList';
+import AppBar from '../Components/AppBar';
 
 export default function App() {
   return (
-    <Router>
-      <Switch>
-        <Route path="/itemList">
-          <ItemList />
-        </Route>
-        <Route path="/">
-          <Redirect to="/itemList" />
-        </Route>
-      </Switch>
-    </Router>
+    <div>
+      <AppBar />
+      <Router>
+        <Switch>
+          <Route path="/itemList">
+            <ItemList />
+          </Route>
+          <Route path="/">
+            <Redirect to="/itemList" />
+          </Route>
+        </Switch>
+      </Router>
+    </div>
   );
 }

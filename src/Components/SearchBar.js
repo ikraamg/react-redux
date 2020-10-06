@@ -2,9 +2,11 @@ import React from 'react';
 import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import PropTypes from 'prop-types';
+import styles from '../styles/SearchBar.module.scss';
 
 const SearchBar = ({ items, changeFilter }) => (
   <Autocomplete
+    className={styles.bar}
     onInputChange={(event, newInputValue) => {
       if (newInputValue === '') { changeFilter('All'); }
     }}
