@@ -1,18 +1,16 @@
 .page {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   background-image: url(https://images.pexels.com/photos/956981/milky-way-starry-sky-night-sky-star-956981.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 80vh;
-  overflow-y: hidden;
+  height: 92vh;
 }
 
 .description,
 .title {
-  top: 0;
   text-align: center;
   font-weight: bolder;
   background-color: rgba(117, 117, 117, 0.34);
@@ -21,5 +19,5 @@
 }
 
 .description {
-  bottom: 0;
+  bottom: 30px;
 }

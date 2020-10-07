@@ -1,5 +1,8 @@
-.flex {
-  display: flex;
-  justify-content: space-between;
-  background-color: red;
+.position {
+  display: flex !important;
+  justify-content: space-around !important;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.749) !important;
 }

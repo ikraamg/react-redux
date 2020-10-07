@@ -12,8 +12,8 @@ function ItemDetails() {
       <div className={styles.page}>
         <div className={styles.title}>{itemId}</div>
         <div className={styles.description}>Description</div>
+        <BottomNav />
       </div>
-      <BottomNav />
     </>
   );
 }

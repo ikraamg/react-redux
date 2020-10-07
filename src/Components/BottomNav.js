@@ -11,6 +11,7 @@ export default function BottomNav() {
 
   return (
     <BottomNavigation
+      className={styles.position}
       value={value}
       onChange={(event, newValue) => {
         setValue(newValue);
