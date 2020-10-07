@@ -3,15 +3,18 @@ import {
   useParams,
 } from 'react-router-dom';
 import BottomNav from './BottomNav';
+import styles from '../styles/ItemDetails.module.scss';
 
 function ItemDetails() {
   const { itemId } = useParams();
   return (
-
-    <div>
-      <div>{itemId}</div>
+    <>
+      <div className={styles.page}>
+        <div className={styles.title}>{itemId}</div>
+        <div className={styles.description}>Description</div>
+      </div>
       <BottomNav />
-    </div>
+    </>
   );
 }
 
