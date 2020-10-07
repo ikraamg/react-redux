@@ -13,7 +13,7 @@ export default function App() {
   return (
     <div>
       <AppBar />
-      <Router>
+      <Router basename={process.env.PUBLIC_URL}>
         <Switch>
           <Route path="/itemList">
             <ItemList />
