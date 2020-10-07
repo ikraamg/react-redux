@@ -13,7 +13,7 @@ export default function App() {
   return (
     <div>
       <AppBar />
-      <Router basename={process.env.PUBLIC_URL}>
+      <Router basename="/react-redux">
         <Switch>
           <Route path="/itemList">
             <ItemList />
