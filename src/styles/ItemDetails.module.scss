@@ -1,23 +1,24 @@
 .page {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  background-image: url(https://images.pexels.com/photos/956981/milky-way-starry-sky-night-sky-star-956981.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 92vh;
+  justify-content: flex-start;
+  padding-bottom: 100px;
+  background: #073b4c;
+  min-height: 100%;
 }
 
-.description,
 .title {
   text-align: center;
   font-weight: bolder;
-  background-color: rgba(117, 117, 117, 0.34);
-  font-size: 20px;
-  color: rgba(245, 245, 245, 0.728);
+  background-color: rgba(211, 64, 19, 0.905);
+  font-size: 40px;
+  color: rgba(255, 255, 255, 0.83);
+  padding: 20px 0;
+  margin-bottom: 10px;
 }
 
-.description {
-  bottom: 30px;
+.button {
+  padding: 10px 0 !important;
+  margin: 5px 0 !important;
+  background-color: #118ab2 !important;
 }

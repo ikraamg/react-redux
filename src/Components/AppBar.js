@@ -15,7 +15,7 @@ export default function ButtonAppBar() {
           <SettingsIcon />
         </IconButton>
         <Typography variant="h6">
-          API
+          API Explorer
         </Typography>
         <IconButton edge="end" color="inherit" aria-label="menu" href="/react-redux">
           <SearchIcon />
