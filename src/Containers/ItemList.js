@@ -15,6 +15,7 @@ const ItemList = () => {
   const category = useSelector(state => state.category);
   const dispatch = useDispatch();
   const handleFilter = value => dispatch(changeFilter(value));
+  const match = useRouteMatch();
 
   const filteredItems = category === 'All' ? items : items.filter(item => item.title === category);
 
@@ -23,10 +24,10 @@ const ItemList = () => {
       title={item.title}
       year={item.year}
       key={item.title}
+      pathLink={`${match.path}/${item.title}`}
     />
   ));
 
-  const match = useRouteMatch();
   return (
     <div>
       <Switch>
