@@ -1,7 +1,8 @@
 import React from 'react';
 import {
-  Card, CardActionArea, CardActions, CardContent, CardMedia, Button, Typography,
+  Card, CardActionArea, CardContent, CardMedia, Typography,
 } from '@material-ui/core';
+import PropTypes from 'prop-types';
 import LoadingAnim from './LoadingAnim';
 import styles from '../styles/CardItem.module.scss';
 
@@ -29,3 +30,8 @@ export default function CardItem({ title, gif }) {
     </Card>
   );
 }
+
+CardItem.propTypes = {
+  title: PropTypes.string.isRequired,
+  gif: PropTypes.string.isRequired,
+};

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
@@ -13,10 +13,7 @@ function ItemDetails() {
   const entries = useSelector(state => state.entries);
   let itemList = [];
 
-  useEffect(() => {
-    loadEntries(dispatch, itemId);
-  }, [itemId]);
-
+  if (Object.keys(entries).length === 0) { loadEntries(dispatch, itemId); }
   try {
     itemList = entries[0].map(item => (
       <Button key={item.API} variant="contained" color="primary" href={item.Link} className={styles.button}>

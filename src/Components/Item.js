@@ -9,14 +9,13 @@ function Item({ title, pathLink }) {
   const fetchGif = () => fetch(`https://api.giphy.com/v1/gifs/translate?api_key=bb2006d9d3454578be1a99cfad65913d&s=${title}`)
     .then(response => response.json())
     .then(data => {
-      const result = data.data.images.fixed_height.url;
+      const result = data.data.images.fixed_height.url ? data.data.images.fixed_height.url : '';
       setGif(result);
     });
 
   useEffect(() => {
-    // fetchGif();
+    fetchGif();
   });
-  console.log(gif);
 
   return (
     <>

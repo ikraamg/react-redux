@@ -20,8 +20,15 @@ const SearchBar = ({ items, changeFilter }) => (
 
 SearchBar.propTypes = {
   // items: PropTypes.arrayOf(PropTypes.shape({
-  //   title: PropTypes.string,
+  //   API: PropTypes.string,
+  //   Auth: PropTypes.string,
+  //   Category: PropTypes.string,
+  //   Cors: PropTypes.string,
+  //   Description: PropTypes.string,
+  //   HTTPS: PropTypes.bool,
+  //   Link: PropTypes.string,
   // })).isRequired,
+  items: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
   changeFilter: PropTypes.func.isRequired,
 };
 

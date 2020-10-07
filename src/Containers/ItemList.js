@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import {
   Switch,
@@ -18,14 +18,10 @@ const ItemList = () => {
   const handleFilter = value => dispatch(changeFilter(value));
   const match = useRouteMatch();
 
-  useEffect(() => {
-    loadCategories(dispatch);
-  },
-  [category]);
+  if (items.length === 0) { loadCategories(dispatch); }
 
   let filteredItems = [];
   let itemList = [];
-
   try {
     filteredItems = category === 'All' ? items[0] : items[0].filter(item => item === category);
     itemList = filteredItems.map(item => (
@@ -38,7 +34,6 @@ const ItemList = () => {
   } catch (error) {
     return <LoadingAnim />;
   }
-
   return (
     <div>
       <Switch>
