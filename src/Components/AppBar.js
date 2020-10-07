@@ -11,13 +11,13 @@ export default function ButtonAppBar() {
   return (
     <AppBar position="static">
       <Toolbar className={styles.flex}>
-        <IconButton edge="start" color="inherit" aria-label="menu" href="/">
+        <IconButton edge="start" color="inherit" aria-label="menu" href="/react-redux">
           <SettingsIcon />
         </IconButton>
         <Typography variant="h6">
           API
         </Typography>
-        <IconButton edge="end" color="inherit" aria-label="menu" href="/">
+        <IconButton edge="end" color="inherit" aria-label="menu" href="/react-redux">
           <SearchIcon />
         </IconButton>
       </Toolbar>

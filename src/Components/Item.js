@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import Button from '@material-ui/core/Button';
 
 import {
-  HashRouter as Router,
   Link,
   useRouteMatch,
 } from 'react-router-dom';
