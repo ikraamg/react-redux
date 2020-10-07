@@ -5,7 +5,7 @@ import styles from '../styles/LoadingAnim.module.scss';
 export default function CircularIndeterminate() {
   return (
     <div className={styles.position}>
-      <CircularProgress color="info" />
+      <CircularProgress />
     </div>
   );
 }

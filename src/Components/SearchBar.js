@@ -10,19 +10,18 @@ const SearchBar = ({ items, changeFilter }) => (
     onInputChange={(event, newInputValue) => {
       if (newInputValue === '') { changeFilter('All'); }
     }}
-    onChange={(event, newValue) => (newValue ? changeFilter(newValue.title) : 'ALL')}
+    onChange={(event, newValue) => (newValue ? changeFilter(newValue) : 'ALL')}
     options={items}
-    getOptionLabel={option => option.title}
+    getOptionLabel={option => option}
       // eslint-disable-next-line react/jsx-props-no-spreading
     renderInput={params => <TextField {...params} label="Filter Results" variant="outlined" />}
   />
 );
 
 SearchBar.propTypes = {
-  items: PropTypes.arrayOf(PropTypes.shape({
-    title: PropTypes.string,
-    year: PropTypes.number,
-  })).isRequired,
+  // items: PropTypes.arrayOf(PropTypes.shape({
+  //   title: PropTypes.string,
+  // })).isRequired,
   changeFilter: PropTypes.func.isRequired,
 };
 

@@ -1,10 +1,8 @@
-import top100Films from '../helpers/testArray';
-
-const itemReducer = (state = top100Films, action) => {
+const itemReducer = (state = [], action) => {
   switch (action.type) {
-    case 'UPDATE_ITEMS':
+    case 'UPDATE_CATEGORIES':
       return [
-        action.item,
+        action.data,
       ];
     default:
       return state;

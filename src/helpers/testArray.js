@@ -102,4 +102,6 @@ const top100Films = [
   { title: 'Monty Python and the Holy Grail', year: 1975 },
 ];
 
-export default top100Films;
+const categories = ['Animals', 'Anime', 'Anti-Malware', 'Art \u0026 Design', 'Books', 'Business', 'Calendar', 'Cloud Storage \u0026 File Sharing', 'Continuous Integration', 'Cryptocurrency', 'Currency Exchange', 'Data Validation', 'Development', 'Dictionaries', 'Documents \u0026 Productivity', 'Environment', 'Events', 'Finance', 'Food \u0026 Drink', 'Games \u0026 Comics', 'Geocoding', 'Government', 'Health', 'Jobs', 'Machine Learning', 'Music', 'News', 'Open Data', 'Open Source Projects', 'Patent', 'Personality', 'Photography', 'Science \u0026 Math', 'Security', 'Shopping', 'Social', 'Sports \u0026 Fitness', 'Test Data', 'Text Analysis', 'Tracking', 'Transportation', 'URL Shorteners', 'Vehicle', 'Video', 'Weather'];
+
+export { top100Films, categories };

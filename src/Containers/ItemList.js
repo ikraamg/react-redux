@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import {
   Switch,
@@ -8,7 +8,7 @@ import {
 import Item from '../Components/Item';
 import SearchBar from '../Components/SearchBar';
 import ItemDetails from '../Components/ItemDetails';
-import changeFilter from '../actions/actions';
+import { changeFilter, loadCategories } from '../actions/actions';
 import LoadingAnim from '../Components/LoadingAnim';
 
 const ItemList = () => {
@@ -18,16 +18,26 @@ const ItemList = () => {
   const handleFilter = value => dispatch(changeFilter(value));
   const match = useRouteMatch();
 
-  const filteredItems = category === 'All' ? items : items.filter(item => item.title === category);
+  useEffect(() => {
+    loadCategories(dispatch);
+  },
+  [category]);
 
-  const itemList = filteredItems.map(item => (
-    <Item
-      title={item.title}
-      year={item.year}
-      key={item.title}
-      pathLink={`${match.path}/${item.title}`}
-    />
-  ));
+  let filteredItems = [];
+  let itemList = [];
+
+  try {
+    filteredItems = category === 'All' ? items[0] : items[0].filter(item => item === category);
+    itemList = filteredItems.map(item => (
+      <Item
+        title={item}
+        key={item}
+        pathLink={`${match.path}/${item}`}
+      />
+    ));
+  } catch (error) {
+    return <LoadingAnim />;
+  }
 
   return (
     <div>
@@ -37,9 +47,8 @@ const ItemList = () => {
         </Route>
         <Route path={match.path}>
           <div>
-            <SearchBar items={items} changeFilter={handleFilter} />
-            {items ? itemList : <LoadingAnim /> }
-            (//TODO display on load promise)
+            <SearchBar items={items[0]} changeFilter={handleFilter} />
+            {itemList}
           </div>
         </Route>
       </Switch>
