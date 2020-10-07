@@ -9,6 +9,7 @@ import Item from '../Components/Item';
 import SearchBar from '../Components/SearchBar';
 import ItemDetails from '../Components/ItemDetails';
 import changeFilter from '../actions/actions';
+import LoadingAnim from '../Components/LoadingAnim';
 
 const ItemList = () => {
   const items = useSelector(state => state.items);
@@ -37,7 +38,8 @@ const ItemList = () => {
         <Route path={match.path}>
           <div>
             <SearchBar items={items} changeFilter={handleFilter} />
-            {itemList}
+            {items ? itemList : <LoadingAnim /> }
+            (//TODO display on load promise)
           </div>
         </Route>
       </Switch>

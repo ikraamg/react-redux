@@ -7,7 +7,6 @@ import CardItem from './CardItem';
 function Item({ title, year, pathLink }) {
   return (
     <>
-
       <Link to={pathLink}>
         <CardItem />
         <Button variant="contained" color="default">
