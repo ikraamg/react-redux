@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.scss';
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Switch,
   Route,
   Redirect,
@@ -13,7 +13,7 @@ export default function App() {
   return (
     <div>
       <AppBar />
-      <Router basename="/react-redux">
+      <Router>
         <Switch>
           <Route path="/itemList">
             <ItemList />
