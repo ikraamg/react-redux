@@ -4,10 +4,6 @@ const itemReducer = (state = [], action) => {
       return [
         action.data,
       ];
-    case 'UPDATE_ENTRIES':
-      return [
-        action.data,
-      ];
     default:
       return state;
   }

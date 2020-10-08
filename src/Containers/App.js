@@ -4,7 +4,6 @@ import {
   HashRouter as Router,
   Switch,
   Route,
-  Redirect,
 } from 'react-router-dom';
 import AppBar from '../Components/AppBar';
 import LoadingAnim from '../Components/LoadingAnim';
@@ -22,7 +21,7 @@ export default function App() {
               <ItemList />
             </Route>
             <Route path="/">
-              <Redirect to="/itemList" />
+              <ItemList />
             </Route>
           </Switch>
         </Suspense>
