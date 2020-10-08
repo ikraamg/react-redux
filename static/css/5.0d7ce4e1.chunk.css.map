@@ -1,0 +1,1 @@
+{"version":3,"sources":["CardItem.module.scss"],"names":[],"mappings":"AAAA,sBACE,kBAAmB,CACnB,eAAgB","file":"5.0d7ce4e1.chunk.css","sourcesContent":[".card {\n  margin-bottom: 20px;\n  margin-top: 10px;\n}\n"]}
