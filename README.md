@@ -27,7 +27,7 @@
 
 ## About The Project
 
-This is a single page app that is built in React/Redux that pulls data about APIs from an API and displays it a better way with filtering. Material UI was used for visual components
+This is a single page app that is built in React/Redux that pulls data from a curated list of [APIs](https://github.com/public-apis/public-apis) from an [API](https://github.com/davemachado/public-api) and displays it a better way with filtering. Material UI was used for visual components
 
 <!-- CONTROL'S -->
 
