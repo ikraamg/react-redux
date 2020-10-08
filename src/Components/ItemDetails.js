@@ -17,8 +17,7 @@ function ItemDetails() {
   try {
     itemList = entries[0].map(item => (
       <Button key={item.API} variant="contained" color="primary" href={item.Link} className={styles.button} rel="noopener noreferrer" target="_blank">
-        {item.API}
-        {': '}
+        <span className={styles.itemTitle}>{item.API}</span>
         {item.Description}
       </Button>
     ));
@@ -27,7 +26,7 @@ function ItemDetails() {
   }
 
   return (
-    <>
+    <div className={styles.bg}>
       <div className={styles.page}>
         <div className={styles.title}>
           {itemId}
@@ -37,7 +36,7 @@ function ItemDetails() {
         {itemList}
         <BottomNav />
       </div>
-    </>
+    </div>
   );
 }
 

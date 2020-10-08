@@ -1,10 +1,6 @@
 import React, { lazy, Suspense } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import {
-  Switch,
-  Route,
-  useRouteMatch,
-} from 'react-router-dom';
+import { Switch, Route, useRouteMatch } from 'react-router-dom';
 import SearchBar from '../Components/SearchBar';
 import ItemDetails from '../Components/ItemDetails';
 import { changeFilter, loadCategories } from '../actions/actions';
@@ -26,6 +22,7 @@ const ItemList = () => {
   try {
     filteredItems = category === 'All' ? items[0] : items[0].filter(item => item === category);
     itemList = filteredItems.map(item => (
+
       <Item
         title={item}
         key={item}

@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  Card, CardActionArea, CardContent, CardMedia, Typography,
+  Card, CardActionArea, CardContent, CardMedia,
 } from '@material-ui/core';
 import PropTypes from 'prop-types';
 import LoadingAnim from './LoadingAnim';
@@ -21,10 +21,10 @@ export default function CardItem({ title, gif }) {
               title="Contemplative Reptile"
             />
           )}
-        <CardContent>
-          <Typography color="textPrimary" variant="h4">
+        <CardContent className={styles.cardConent}>
+          <p className={styles.heading}>
             {title}
-          </Typography>
+          </p>
         </CardContent>
       </CardActionArea>
     </Card>
