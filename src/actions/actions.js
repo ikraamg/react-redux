@@ -33,4 +33,6 @@ const loadEntries = (dispatch, category) => {
     });
 };
 
-export { changeFilter, loadCategories, loadEntries };
+export {
+  changeFilter, loadCategories, loadEntries, getCategories, getEntries,
+};

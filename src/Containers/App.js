@@ -1,5 +1,4 @@
 import React, { lazy, Suspense } from 'react';
-import './App.scss';
 import {
   HashRouter as Router,
   Switch,

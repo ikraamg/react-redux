@@ -12,6 +12,7 @@ const ItemList = () => {
   const items = useSelector(state => state.items);
   const category = useSelector(state => state.category);
   const dispatch = useDispatch();
+
   const handleFilter = value => dispatch(changeFilter(value));
   const match = useRouteMatch();
 
