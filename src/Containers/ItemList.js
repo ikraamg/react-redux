@@ -2,7 +2,7 @@ import React, { lazy, Suspense } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Switch, Route, useRouteMatch } from 'react-router-dom';
 import SearchBar from '../Components/SearchBar';
-import ItemDetails from '../Components/ItemDetails';
+import ItemDetails from './ItemDetails';
 import { changeFilter, loadCategories } from '../actions/actions';
 import LoadingAnim from '../Components/LoadingAnim';
 

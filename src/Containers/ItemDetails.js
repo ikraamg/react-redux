@@ -2,10 +2,10 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
-import BottomNav from './BottomNav';
+import BottomNav from '../Components/BottomNav';
 import styles from '../styles/ItemDetails.module.scss';
 import { loadEntries } from '../actions/actions';
-import LoadingAnim from './LoadingAnim';
+import LoadingAnim from '../Components/LoadingAnim';
 
 function ItemDetails() {
   const { itemId } = useParams();
