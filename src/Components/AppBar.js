@@ -5,6 +5,7 @@ import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import SettingsIcon from '@material-ui/icons/Settings';
 import SearchIcon from '@material-ui/icons/Search';
+import { Button } from '@material-ui/core/';
 import styles from '../styles/AppBar.module.scss';
 
 export default function ButtonAppBar() {
@@ -14,9 +15,11 @@ export default function ButtonAppBar() {
         <IconButton edge="start" color="inherit" aria-label="menu" href="/react-redux">
           <SettingsIcon />
         </IconButton>
-        <Typography variant="h6">
-          API Explorer
-        </Typography>
+
+        <Button href="/react-redux" color="inherit">
+          <Typography variant="h6">API Explorer</Typography>
+        </Button>
+
         <IconButton edge="end" color="inherit" aria-label="menu" href="/react-redux">
           <SearchIcon />
         </IconButton>

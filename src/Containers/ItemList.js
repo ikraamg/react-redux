@@ -1,15 +1,16 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import {
   Switch,
   Route,
   useRouteMatch,
 } from 'react-router-dom';
-import Item from '../Components/Item';
 import SearchBar from '../Components/SearchBar';
 import ItemDetails from '../Components/ItemDetails';
 import { changeFilter, loadCategories } from '../actions/actions';
 import LoadingAnim from '../Components/LoadingAnim';
+
+const Item = lazy(() => import('../Components/Item'));
 
 const ItemList = () => {
   const items = useSelector(state => state.items);
@@ -36,17 +37,19 @@ const ItemList = () => {
   }
   return (
     <div>
-      <Switch>
-        <Route path={`${match.path}/:itemId`}>
-          <ItemDetails />
-        </Route>
-        <Route path={match.path}>
-          <div>
-            <SearchBar items={items[0]} changeFilter={handleFilter} />
-            {itemList}
-          </div>
-        </Route>
-      </Switch>
+      <Suspense>
+        <Switch>
+          <Route path={`${match.path}/:itemId`}>
+            <ItemDetails />
+          </Route>
+          <Route path={match.path}>
+            <div>
+              <SearchBar items={items[0]} changeFilter={handleFilter} />
+              {itemList}
+            </div>
+          </Route>
+        </Switch>
+      </Suspense>
     </div>
   );
 };

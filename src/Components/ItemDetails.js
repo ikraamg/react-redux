@@ -16,7 +16,7 @@ function ItemDetails() {
   if (Object.keys(entries).length === 0) { loadEntries(dispatch, itemId); }
   try {
     itemList = entries[0].map(item => (
-      <Button key={item.API} variant="contained" color="primary" href={item.Link} className={styles.button}>
+      <Button key={item.API} variant="contained" color="primary" href={item.Link} className={styles.button} rel="noopener noreferrer" target="_blank">
         {item.API}
         {': '}
         {item.Description}

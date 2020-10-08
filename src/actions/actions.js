@@ -26,7 +26,7 @@ const loadCategories = dispatch => {
 };
 
 const loadEntries = (dispatch, category) => {
-  fetch(`https://api.publicapis.org//entries?category=${category}`)
+  fetch(`https://api.publicapis.org/entries?category=${category}&https=true`)
     .then(response => response.json())
     .then(data => {
       dispatch(getEntries(data.entries));

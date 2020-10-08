@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import './App.scss';
 import {
   HashRouter as Router,
@@ -6,22 +6,26 @@ import {
   Route,
   Redirect,
 } from 'react-router-dom';
-import ItemList from './ItemList';
 import AppBar from '../Components/AppBar';
+import LoadingAnim from '../Components/LoadingAnim';
+
+const ItemList = lazy(() => import('./ItemList'));
 
 export default function App() {
   return (
     <div>
       <AppBar />
       <Router>
-        <Switch>
-          <Route path="/itemList">
-            <ItemList />
-          </Route>
-          <Route path="/">
-            <Redirect to="/itemList" />
-          </Route>
-        </Switch>
+        <Suspense fallback={LoadingAnim()}>
+          <Switch>
+            <Route path="/itemList">
+              <ItemList />
+            </Route>
+            <Route path="/">
+              <Redirect to="/itemList" />
+            </Route>
+          </Switch>
+        </Suspense>
       </Router>
     </div>
   );
